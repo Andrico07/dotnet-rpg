@@ -1,5 +1,6 @@
 using dotnet_rpg.Data;
 using dotnet_rpg.Services.CharacterService;
+using dotnet_rpg.Services.ProductService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ICharacterService, CharacterService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
